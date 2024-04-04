@@ -1,25 +1,32 @@
 package com.ravi.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+import java.util.List;
+
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class Category {
+@AllArgsConstructor
+@Entity
+public class CartItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String name;
+    @ManyToOne
+    private Cart cart;
 
     @ManyToOne
-    @JsonIgnore
-    private Restaurant restaurant;
+    private Food food;
+
+    private int quantity;
+
+    private List<String> ingredients;
+
+    private Long totalPrice;
 
 }
