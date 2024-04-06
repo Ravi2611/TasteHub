@@ -38,6 +38,7 @@ public class JwtTokenValidator extends OncePerRequestFilter {
                 SecretKey key = Keys.hmacShaKeyFor(JwtConstant.SECRET_KEY.getBytes());
                 Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(jwt).getBody();
 
+                // Getting email and role from the jwt
                 String email = String.valueOf(claims.get("email"));
                 String authorities = String.valueOf(claims.get("authorities")); // of the format - ROLE_CUSTOMER, ROLE_ADMIN
 

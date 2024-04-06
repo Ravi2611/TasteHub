@@ -34,7 +34,7 @@ public class AppConfig {
                         .anyRequest().permitAll()).addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class)
                         .csrf(csrf->csrf.disable())
                         .cors(cors->cors.configurationSource(corsConfigurationSource()));
-        return null;
+        return http.build();
     }
 
     private CorsConfigurationSource corsConfigurationSource() {
@@ -42,7 +42,7 @@ public class AppConfig {
             @Override
             public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
                 CorsConfiguration cfg = new CorsConfiguration();
-                // Frontend links which we want to access our backend
+                // Frontend links which we want to access our backend without authentication
                 cfg.setAllowedOrigins(Arrays.asList(
                         "http://localhost:8080/",
                         "http://deployedLink.com"
