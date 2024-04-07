@@ -4,7 +4,9 @@ import com.ravi.config.JwtProvider;
 import com.ravi.model.User;
 import com.ravi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImplementation implements UserService{
     @Autowired
     UserRepository userRepository;

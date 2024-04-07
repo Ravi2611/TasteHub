@@ -20,7 +20,7 @@ public class Restaurant {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne // We are setting it such that one restaurant will have one owner only
+    @OneToOne // One restaurant one owner and vise versa
     private User owner;
 
     private String name;
