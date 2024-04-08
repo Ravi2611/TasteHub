@@ -29,7 +29,7 @@ public class Food {
     private Category foodCategory;
 
     @Column(length = 1000)
-    @ElementCollection // it will create a seperate collection for images
+    @ElementCollection // it will create a separate collection for images
     private List<String> images;
 
     private boolean available;
