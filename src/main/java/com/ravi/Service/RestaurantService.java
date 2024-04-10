@@ -21,6 +21,7 @@ public interface RestaurantService {
 
     public Restaurant findRestaurantById(Long restaurantId) throws Exception;
 
+    // One user is associated with one restaurant only - One user cannot be admin of multiple restaurant
     public Restaurant getRestaurantByUserId(Long userId) throws Exception;
 
     public RestaurantDto addToFavourites(Long restaurantId, User user) throws Exception;
