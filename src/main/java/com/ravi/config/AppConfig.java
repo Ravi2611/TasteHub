@@ -45,6 +45,7 @@ public class AppConfig {
                 // Frontend links which we want to access our backend without authentication
                 cfg.setAllowedOrigins(Arrays.asList(
                         "http://localhost:8080/",
+                        "http://localhost:3000/",
                         "http://deployedLink.com"
                 ));
                 cfg.setAllowedMethods(Collections.singletonList("*"));
