@@ -35,13 +35,14 @@ public class CartServiceImplementation implements CartService{
                 return updateCartItemQuantity(cartItem.getId(), newQuantity);
             }
         }
-
+        System.out.println("Initial ingredients: " + req.getIngredientItems());
         CartItem newCartItem = new CartItem();
         newCartItem.setFood(food);
         newCartItem.setCart(cart);
         newCartItem.setQuantity(req.getQuantity());
         newCartItem.setIngredients(req.getIngredientItems());
         newCartItem.setTotalPrice(req.getQuantity()*food.getPrice());
+        System.out.println("New ingredients: " + newCartItem.getIngredients());
 
         CartItem savedCartItem = cartItemRepository.save(newCartItem);
 
